@@ -156,7 +156,21 @@ public class Banner: UIView {
         backgroundView.backgroundColor = backgroundColor
         backgroundView.alpha = 0.95
     }
-    
+
+	public required init(attributedTitle: NSAttributedString? = nil, attributedSubtitle: NSAttributedString? = nil, image: UIImage? = nil, backgroundColor: UIColor = UIColor.blackColor(), didTapBlock: (() -> ())? = nil) {
+		self.didTapBlock = didTapBlock
+		self.image = image
+		super.init(frame: CGRectZero)
+		resetShadows()
+		addGestureRecognizers()
+		initializeSubviews()
+		resetTintColor()
+		titleLabel.attributedText = attributedTitle
+		detailLabel.attributedText = attributedSubtitle
+		backgroundView.backgroundColor = backgroundColor
+		backgroundView.alpha = 0.95
+	}
+
     private func forceUpdates() {
         guard let superview = superview, showingConstraint = showingConstraint, hiddenConstraint = hiddenConstraint else { return }
         switch bannerState {
