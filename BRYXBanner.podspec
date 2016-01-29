@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = "BRYXBanner"
-  s.version          = "0.5.0"
+  s.version          = "0.5.2"
   s.summary          = "A lightweight dropdown notification for iOS 7+, in Swift."
   s.homepage         = "https://github.com/bryx-inc/BRYXBanner"
   s.license          = 'MIT'
@@ -19,7 +19,7 @@ Pod::Spec.new do |s|
    }
   end
 
-  s.subspec "Test Helpers" do |sp|
+  s.subspec "TestHelpers" do |sp|
     sp.source_files = 'Pod/Test Helpers/**/*'
     sp.dependency 'BRYXBanner/Core'
   end
